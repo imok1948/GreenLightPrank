@@ -1,2 +1,2 @@
 # GreenLightPrank
-This is app which just meant for prank green light
+This is an app that is just meant to prank Green Line
