@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-  android:layout_width="wrap_content"
-  android:layout_height="wrap_content"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
   android:background="@android:color/transparent">
 
-  <TextView
-    android:id="@+id/overlayText"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Overlay Text"
-    android:textSize="20sp"
-    android:textColor="#FFFFFF"
-    android:background="#FF0099" />
+  <!-- A vertical green line in the middle of the screen -->
+  <View
+    android:id="@+id/overlayLine"
+    android:layout_width="3dp"
+    android:layout_height="match_parent"
+    android:background="#00FF00"
+    android:layout_centerInParent="true" />
 </RelativeLayout>

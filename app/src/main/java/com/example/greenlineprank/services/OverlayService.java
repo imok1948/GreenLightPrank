@@ -41,7 +41,7 @@ public class OverlayService extends Service {
       PixelFormat.TRANSLUCENT
     );
 
-    params.gravity = Gravity.TOP | Gravity.LEFT; // Adjust as needed
+    params.gravity = Gravity.TOP | Gravity.CENTER; // Adjust as needed
     windowManager.addView(overlayView, params);
   }
 
