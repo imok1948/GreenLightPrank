@@ -10,9 +10,12 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.greenlineprank.R;
+import com.example.greenlineprank.services.OverlayService;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,30 +26,14 @@ public class MainActivity extends AppCompatActivity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
-    showOverlay();
+    showServiceOverlay();
 
     Button button = findViewById(R.id.button);
   }
 
-  private void showOverlay() {
-    if (overlayView != null) {
-      windowManager.removeView(overlayView);
-    }
-    overlayView = new View(this);
-    overlayView.setBackgroundColor(0xAA00FF00);
-    WindowManager.LayoutParams params = new WindowManager.LayoutParams(
-      WindowManager.LayoutParams.WRAP_CONTENT,
-      WindowManager.LayoutParams.WRAP_CONTENT,
-      Build.VERSION.SDK_INT >= Build.VERSION_CODES.O ? WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY : WindowManager.LayoutParams.TYPE_PHONE,
-      WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE | WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, android.graphics.PixelFormat.TRANSLUCENT);
-
-    params.y = -200;
-    params.height = 5000;
-    params.width = 3;
-
-    windowManager = (WindowManager) getSystemService(WINDOW_SERVICE);
-    windowManager.addView(overlayView, params);
-    Toast.makeText(this, "Overlay Started", Toast.LENGTH_SHORT).show();
+  private void showServiceOverlay() {
+    Intent serviceIntent = new Intent(this, OverlayService.class);
+    startService(serviceIntent);
   }
 
   @Override
@@ -54,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
     super.onActivityResult(requestCode, resultCode, data);
     if (requestCode == 1001) {
       if (Settings.canDrawOverlays(this)) {
-        showOverlay();
+//        showOverlay();
       } else {
         Toast.makeText(this, "Permission not granted!", Toast.LENGTH_SHORT).show();
       }
