@@ -29,7 +29,11 @@ public class PrankSettings {
   public static final int[] NUMBER_OF_LINES_OPTIONS = {1, 2, 4, 8, 16, RANDOM_LINES}; // -1 for Random
   public static final String[] LOCATION_OF_LINES_OPTIONS = {"leftmost of screen", "left", "left-center", "center", "right-center", "right", "rightmost of screen"};
   public static final String[] COLOR_OF_LINES_OPTIONS = {"Red", "Green", "Blue", "Purple"};
-  public static final int[] DELAY_START_OPTIONS = {0, 10, 15, 20}; // Delay in seconds
+  public static final int[] DELAY_START_OPTIONS = {0, 3, 10, 15, 20}; // Delay in seconds
+
+  public static final int[] SETTING_LINE_TYPE = {0, 1};
+  public static final int[] SETTING_LINE_LOCATION = {0, 1, 2, 3, 4, 5, 6};
+  public static final int[] SETTING_LINE_COLOR = {0xFFFF0000, 0xFF00FF00, 0xFF0000FF, 0xFFFF00FF};
 
   // Constructor
   public PrankSettings(Context context) {
@@ -56,9 +60,9 @@ public class PrankSettings {
     locationOfLines = 0;
     colorOfLines = 0;
     delayStart = 0;
-
     saveSettings();
   }
+
   // Load settings from SharedPreferences
   private void loadSettings() {
     prankStarted = sharedPreferences.getBoolean(KEY_PRANK_STARTED, false);

@@ -144,13 +144,24 @@ public class MainActivity extends AppCompatActivity {
   }
 
   private void showServiceOverlay() {
-    Toast.makeText(getApplicationContext(), "Starting service showServiceOverlay...", Toast.LENGTH_SHORT).show();
+//    Toast.makeText(getApplicationContext(), "Starting service showServiceOverlay...", Toast.LENGTH_SHORT).show();
     Intent serviceIntent = new Intent(this, OverlayService.class);
+    int lineType = prankSettings.getTypeOfLines() < prankSettings.SETTING_LINE_TYPE.length ? prankSettings.SETTING_LINE_TYPE[prankSettings.getTypeOfLines()] : prankSettings.SETTING_LINE_TYPE[0];
+    int lineNumbers = prankSettings.getNumberOfLines();
+    int lineLocation = prankSettings.getLocationOfLines() < prankSettings.SETTING_LINE_LOCATION.length ? prankSettings.SETTING_LINE_LOCATION[prankSettings.getLocationOfLines()] : prankSettings.SETTING_LINE_LOCATION[0];
+    int lineColor = prankSettings.getColorOfLines() < prankSettings.SETTING_LINE_COLOR.length ? prankSettings.SETTING_LINE_COLOR[prankSettings.getColorOfLines()] : prankSettings.SETTING_LINE_COLOR[0];
+    int delayToStart = prankSettings.getDelayStart() < prankSettings.DELAY_START_OPTIONS.length ? prankSettings.DELAY_START_OPTIONS[prankSettings.getDelayStart()] : prankSettings.DELAY_START_OPTIONS[0];
+
+    serviceIntent.putExtra(Utilities.EXTRA_TYPE_OF_LINE, lineType);
+    serviceIntent.putExtra(Utilities.EXTRA_NUMBER_OF_LINES, lineNumbers);
+    serviceIntent.putExtra(Utilities.EXTRA_LOCATION_OF_LINE, lineLocation);
+    serviceIntent.putExtra(Utilities.EXTRA_LINE_COLOR, lineColor);
+    serviceIntent.putExtra(Utilities.EXTRA_LINE_DELAY, delayToStart);
     startService(serviceIntent);
   }
 
   private void hideServiceOverlay() {
-    Toast.makeText(getApplicationContext(), "Stopping service showServiceOverlay...", Toast.LENGTH_SHORT).show();
+//    Toast.makeText(getApplicationContext(), "Stopping service showServiceOverlay...", Toast.LENGTH_SHORT).show();
     Intent serviceIntent = new Intent(this, OverlayService.class);
     stopService(serviceIntent);
   }
@@ -246,7 +257,6 @@ public class MainActivity extends AppCompatActivity {
     });
     builder.show();
   }
-
 
   private void setListeners() {
     buttonClearSharedPrefs.setOnClickListener(new View.OnClickListener() {
