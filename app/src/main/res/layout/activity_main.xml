@@ -44,6 +44,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/spacing_large"
+            android:gravity="center"
             android:text="Welcome to Prank Line App!"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"
             android:textColor="@android:color/black"
@@ -60,108 +61,6 @@
               android:orientation="vertical"
               android:paddingTop="@dimen/spacing_middle">
 
-
-              <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="?attr/selectableItemBackground"
-                android:clickable="true"
-                android:gravity="center_vertical"
-                android:minHeight="60dp"
-                android:orientation="horizontal"
-                android:paddingLeft="@dimen/spacing_large"
-                android:paddingRight="@dimen/spacing_large">
-
-
-                <TextView
-                  android:layout_width="0dp"
-                  android:layout_height="wrap_content"
-                  android:layout_weight="1"
-                  android:text="Select Language"
-                  android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                  android:textColor="@color/purple_500"
-                  android:textStyle="bold" />
-
-                <View
-                  android:layout_width="@dimen/spacing_middle"
-                  android:layout_height="wrap_content" />
-
-                <TextView
-                  android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"
-                  android:text="English, US"
-                  android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                  android:textColor="@color/colorPrimary" />
-
-                <View
-                  android:layout_width="@dimen/spacing_middle"
-                  android:layout_height="wrap_content" />
-
-              </LinearLayout>
-
-
-              <View
-                android:layout_width="match_parent"
-                android:layout_height="1px"
-                android:background="@color/grey_10" />
-
-              <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:minHeight="?attr/actionBarSize"
-                android:orientation="vertical"
-                android:padding="@dimen/spacing_large">
-
-                <LinearLayout
-                  android:layout_width="match_parent"
-                  android:layout_height="wrap_content"
-                  android:background="?attr/selectableItemBackground"
-                  android:clickable="true"
-                  android:gravity="center_vertical"
-                  android:orientation="horizontal">
-
-                  <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Clear SharedPrefs"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                    android:textColor="@color/grey_90"
-                    android:textStyle="bold" />
-
-                  <View
-                    android:layout_width="@dimen/spacing_middle"
-                    android:layout_height="wrap_content" />
-
-                  <Button
-                    android:id="@+id/button_clear_shared_prefs"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Clean"
-                    android:theme="@style/Button.Primary" />
-
-                  <View
-                    android:layout_width="@dimen/spacing_middle"
-                    android:layout_height="wrap_content" />
-
-                </LinearLayout>
-
-                <TextView
-                  android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"
-                  android:text="This will clear shared prefs"
-                  android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                  android:textColor="@color/grey_40" />
-
-              </LinearLayout>
-
-              <View
-                android:layout_width="match_parent"
-                android:layout_height="1px"
-                android:background="@color/grey_10" />
 
               <LinearLayout
                 android:layout_width="match_parent"
@@ -211,6 +110,294 @@
                   android:text="Click to start prank"
                   android:textAppearance="@style/TextAppearance.AppCompat.Small"
                   android:textColor="@color/grey_40" />
+
+              </LinearLayout>
+
+              <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/spacing_middle">
+
+                <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginStart="@dimen/spacing_large"
+                  android:layout_marginLeft="@dimen/spacing_large"
+                  android:layout_marginTop="@dimen/spacing_large"
+                  android:layout_marginBottom="@dimen/spacing_middle"
+                  android:text="Settings"
+                  android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                  android:textColor="@color/grey_90"
+                  android:textStyle="bold" />
+
+                <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:background="?attr/selectableItemBackground"
+                  android:clickable="true"
+                  android:gravity="center_vertical"
+                  android:minHeight="@dimen/spacing_xxlarge"
+                  android:orientation="horizontal"
+                  android:paddingLeft="@dimen/spacing_large"
+                  android:paddingRight="@dimen/spacing_large">
+
+                  <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Type of green line prank"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="@color/grey_40" />
+
+                  <EditText
+                    android:id="@+id/setting_type_of_line"
+                    style="@style/EditText.Flat.Grey"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/spacing_xmlarge"
+                    android:background="@drawable/edit_text_round_bg_white"
+                    android:drawableEnd="@drawable/ic_expand_arrow"
+                    android:drawableRight="@drawable/ic_expand_arrow"
+                    android:editable="false"
+                    android:focusable="false"
+                    android:text="Single line" />
+
+                  <View
+                    android:layout_width="@dimen/spacing_middle"
+                    android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <View
+                  android:layout_width="match_parent"
+                  android:layout_height="1px"
+                  android:background="@color/grey_10" />
+
+                <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:background="?attr/selectableItemBackground"
+                  android:clickable="true"
+                  android:gravity="center_vertical"
+                  android:minHeight="@dimen/spacing_xxlarge"
+                  android:orientation="horizontal"
+                  android:paddingLeft="@dimen/spacing_large"
+                  android:paddingRight="@dimen/spacing_large">
+
+                  <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Number of lines"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="@color/grey_40" />
+
+                  <View
+                    android:layout_width="@dimen/spacing_middle"
+                    android:layout_height="wrap_content" />
+
+                  <EditText
+                    android:id="@+id/setting_number_of_line"
+                    style="@style/EditText.Flat.Grey"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/spacing_xmlarge"
+                    android:background="@drawable/edit_text_round_bg_white"
+                    android:drawableEnd="@drawable/ic_expand_arrow"
+                    android:drawableRight="@drawable/ic_expand_arrow"
+                    android:editable="false"
+                    android:focusable="false"
+                    android:text="1" />
+
+                  <View
+                    android:layout_width="@dimen/spacing_middle"
+                    android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <View
+                  android:layout_width="match_parent"
+                  android:layout_height="1px"
+                  android:background="@color/grey_10" />
+
+                <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:background="?attr/selectableItemBackground"
+                  android:clickable="true"
+                  android:gravity="center_vertical"
+                  android:minHeight="@dimen/spacing_xxlarge"
+                  android:orientation="horizontal"
+                  android:paddingLeft="@dimen/spacing_large"
+                  android:paddingRight="@dimen/spacing_large">
+
+                  <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Location of lines"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="@color/grey_40" />
+
+                  <View
+                    android:layout_width="@dimen/spacing_middle"
+                    android:layout_height="wrap_content" />
+
+
+                  <EditText
+                    android:id="@+id/setting_location_of_line"
+                    style="@style/EditText.Flat.Grey"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/spacing_xmlarge"
+                    android:background="@drawable/edit_text_round_bg_white"
+                    android:drawableEnd="@drawable/ic_expand_arrow"
+                    android:drawableRight="@drawable/ic_expand_arrow"
+                    android:editable="false"
+                    android:focusable="false"
+                    android:text="Center" />
+
+                  <View
+                    android:layout_width="@dimen/spacing_middle"
+                    android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <View
+                  android:layout_width="match_parent"
+                  android:layout_height="1px"
+                  android:background="@color/grey_10" />
+
+                <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:background="?attr/selectableItemBackground"
+                  android:clickable="true"
+                  android:gravity="center_vertical"
+                  android:minHeight="@dimen/spacing_xxlarge"
+                  android:orientation="horizontal"
+                  android:paddingLeft="@dimen/spacing_large"
+                  android:paddingRight="@dimen/spacing_large">
+
+                  <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Color of lines"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="@color/grey_40" />
+
+                  <View
+                    android:layout_width="@dimen/spacing_middle"
+                    android:layout_height="wrap_content" />
+
+                  <EditText
+                    android:id="@+id/setting_color_of_line"
+                    style="@style/EditText.Flat.Grey"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/spacing_xmlarge"
+                    android:background="@drawable/edit_text_round_bg_white"
+                    android:drawableEnd="@drawable/ic_expand_arrow"
+                    android:drawableRight="@drawable/ic_expand_arrow"
+                    android:editable="false"
+                    android:focusable="false"
+                    android:text="Green" />
+
+                  <View
+                    android:layout_width="@dimen/spacing_middle"
+                    android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <View
+                  android:layout_width="match_parent"
+                  android:layout_height="1px"
+                  android:background="@color/grey_10" />
+
+                <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:background="?attr/selectableItemBackground"
+                  android:clickable="true"
+                  android:gravity="center_vertical"
+                  android:minHeight="@dimen/spacing_xxlarge"
+                  android:orientation="horizontal"
+                  android:paddingLeft="@dimen/spacing_large"
+                  android:paddingRight="@dimen/spacing_large">
+
+                  <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Delay to start the prank"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="@color/grey_40" />
+
+                  <View
+                    android:layout_width="@dimen/spacing_middle"
+                    android:layout_height="wrap_content" />
+
+                  <EditText
+                    android:id="@+id/setting_delay_to_start"
+                    style="@style/EditText.Flat.Grey"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/spacing_xmlarge"
+                    android:background="@drawable/edit_text_round_bg_white"
+                    android:drawableEnd="@drawable/ic_expand_arrow"
+                    android:drawableRight="@drawable/ic_expand_arrow"
+                    android:editable="false"
+                    android:focusable="false"
+                    android:text="Immediately" />
+
+                  <View
+                    android:layout_width="@dimen/spacing_middle"
+                    android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <View
+                  android:layout_width="match_parent"
+                  android:layout_height="1px"
+                  android:background="@color/grey_10" />
+
+                <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:background="?attr/selectableItemBackground"
+                  android:clickable="true"
+                  android:gravity="center_vertical"
+                  android:minHeight="@dimen/spacing_xxlarge"
+                  android:orientation="horizontal"
+                  android:paddingLeft="@dimen/spacing_large"
+                  android:paddingRight="@dimen/spacing_large">
+
+                  <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Clear shared prefs"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="@color/grey_40" />
+
+                  <View
+                    android:layout_width="@dimen/spacing_middle"
+                    android:layout_height="wrap_content" />
+
+                  <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/button_clear_shared_prefs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Clear"
+                    android:theme="@style/Button.Primary" />
+
+                  <View
+                    android:layout_width="@dimen/spacing_middle"
+                    android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <View
+                  android:layout_width="match_parent"
+                  android:layout_height="1px"
+                  android:background="@color/grey_10" />
 
               </LinearLayout>
 
