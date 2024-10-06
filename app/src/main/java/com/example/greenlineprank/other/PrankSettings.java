@@ -24,16 +24,21 @@ public class PrankSettings {
 
   // Arrays for options to show user
   public static final int RANDOM_LINES = -1;
+  public static final int RANDOM_LOCATION = -2;
+  public static final int RANDOM_COLORS = -2;
 
+  //This is just to print on the menu
   public static final String[] TYPE_OF_LINES_OPTIONS = {"Entire screen", "Few lines"};
-  public static final int[] NUMBER_OF_LINES_OPTIONS = {1, 2, 4, 8, 16, RANDOM_LINES}; // -1 for Random
-  public static final String[] LOCATION_OF_LINES_OPTIONS = {"leftmost of screen", "left", "left-center", "center", "right-center", "right", "rightmost of screen"};
-  public static final String[] COLOR_OF_LINES_OPTIONS = {"Red", "Green", "Blue", "Purple"};
-  public static final int[] DELAY_START_OPTIONS = {0, 3, 10, 15, 20}; // Delay in seconds
+  public static final int[] NUMBER_OF_LINES_OPTIONS = {1, 2, 3, 4, 6, 8, RANDOM_LINES}; // -1 for Random
+  public static final String[] LOCATION_OF_LINES_OPTIONS = {"Left", "Left-center", "Center", "Right-center", "Right"};
+  public static final String[] COLOR_OF_LINES_OPTIONS = {"Green", "Red", "Blue", "Purple"};
+  public static final int[] DELAY_START_OPTIONS = {0, 5, 10, 20, 30, 40, 60}; // Delay in seconds
 
+
+  //This is for internal
   public static final int[] SETTING_LINE_TYPE = {0, 1};
-  public static final int[] SETTING_LINE_LOCATION = {0, 1, 2, 3, 4, 5, 6};
-  public static final int[] SETTING_LINE_COLOR = {0xFFFF0000, 0xFF00FF00, 0xFF0000FF, 0xFFFF00FF};
+  public static final float[] SETTING_LINE_LOCATION = {-0.80f, -0.5f, 0, 0.5f, 0.80f};
+  public static final int[] SETTING_LINE_COLOR = {0xFF00FF00, 0xFFFF0000, 0xFF0000FF, 0xFFFF00FF};
 
   // Constructor
   public PrankSettings(Context context) {
@@ -53,7 +58,7 @@ public class PrankSettings {
     editor.apply();
   }
 
-  public void clearSettings(){
+  public void clearSettings() {
     prankStarted = false;
     typeOfLines = 0;
     numberOfLines = 0;
